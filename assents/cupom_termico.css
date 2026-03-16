@@ -1,0 +1,39 @@
+@page { margin: 0; }
+
+body { 
+    font-family: 'Courier New', Courier, monospace; 
+    width: 72mm; 
+    margin: 0 auto; 
+    padding: 5mm; 
+    font-size: 11px; 
+    color: #000;
+    line-height: 1.2;
+}
+
+.cupom-wrapper { width: 100%; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.bold { font-weight: bold; }
+.font-sm { font-size: 10px; }
+.font-lg { font-size: 14px; }
+.linha-tracejada { border-bottom: 1px dashed #000; margin: 5px 0; }
+
+table { width: 100%; border-collapse: collapse; margin: 5px 0; }
+th { border-bottom: 1px solid #000; text-align: left; font-size: 10px; }
+td { padding: 2px 0; vertical-align: top; }
+
+.total-container { font-size: 13px; margin-top: 10px; }
+.flex-between { display: flex; justify-content: space-between; }
+.footer-space { margin-top: 10px; padding-bottom: 20px; }
+
+.btn-print { 
+    background: #2563eb; color: white; border: none; padding: 10px; 
+    border-radius: 5px; cursor: pointer; margin: 5px 0; width: 100%;
+    font-weight: bold;
+}
+.btn-secondary { background: #64748b; }
+
+@media print { 
+    .no-print { display: none; } 
+    body { width: 100%; padding: 2mm; margin: 0; }
+}

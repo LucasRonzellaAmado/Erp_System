@@ -1,0 +1,29 @@
+.conteudo { flex: 1; padding: 25px; background: #f8fafc; margin-left: 250px; }
+.header-vendas { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
+.resumo-faturamento { background: #2563eb; color: #fff; padding: 15px; border-radius: 10px; text-align: right; }
+.resumo-faturamento small { display: block; font-size: 10px; opacity: 0.8; }
+.resumo-faturamento strong { font-size: 20px; }
+
+.filtros-venda { display: flex; gap: 10px; background: #fff; padding: 15px; border-radius: 10px; border: 1px solid #e2e8f0; margin-bottom: 20px; align-items: flex-end; }
+.filter-field { flex: 1; }
+.filter-field label { display: block; font-size: 10px; font-weight: bold; color: #64748b; margin-bottom: 5px; }
+.input-erp { width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 5px; }
+.btn-filtrar { background: #1e293b; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; height: 35px; }
+
+.table-container { background: #fff; border-radius: 10px; border: 1px solid #e2e8f0; overflow: hidden; }
+.table-erp { width: 100%; border-collapse: collapse; }
+.table-erp th { background: #f1f5f9; padding: 12px; text-align: left; font-size: 11px; color: #475569; text-transform: uppercase; }
+.table-erp td { padding: 12px; border-bottom: 1px solid #f1f5f9; font-size: 13px; }
+.txt-id { font-weight: bold; color: #2563eb; }
+.txt-total { font-weight: bold; }
+.badge { background: #e2e8f0; padding: 3px 8px; border-radius: 4px; font-size: 11px; }
+
+.actions { display: flex; gap: 5px; }
+.btn-view, .btn-print { border: 1px solid #e2e8f0; background: #fff; padding: 5px 8px; border-radius: 4px; cursor: pointer; text-decoration: none; color: #000; }
+.btn-view:hover { background: #f1f5f9; }
+
+.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); display: none; align-items: center; justify-content: center; z-index: 1000; }
+.modal-content { background: #fff; width: 90%; max-width: 600px; border-radius: 10px; overflow: hidden; }
+.modal-header { padding: 15px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+.close { cursor: pointer; font-size: 20px; }
+#modalBody { padding: 20px; max-height: 70vh; overflow-y: auto; }

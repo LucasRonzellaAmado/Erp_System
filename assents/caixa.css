@@ -1,0 +1,129 @@
+.input-money { 
+    text-align: right; 
+    font-weight: bold; 
+    color: #1e293b; 
+    font-size: 18px; 
+}
+
+.card-erp { 
+    background: #fff; 
+    padding: 20px; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+    margin-bottom: 20px; 
+    border: 1px solid #e2e8f0; 
+}
+
+.row { 
+    display: flex; 
+    gap: 15px; 
+    margin-bottom: 15px; 
+}
+
+.col { 
+    flex: 1; 
+    display: flex; 
+    flex-direction: column; 
+}
+
+.col-2 { flex: 2; }
+
+label { 
+    font-size: 11px; 
+    font-weight: 700; 
+    color: #64748b; 
+    text-transform: uppercase; 
+    margin-bottom: 5px; 
+    letter-spacing: 0.5px; 
+}
+
+input, select { 
+    padding: 10px; 
+    border: 1px solid #cbd5e1; 
+    border-radius: 6px; 
+}
+
+.btn-primary { 
+    background: #2563eb; 
+    color: white; 
+    border: none; 
+    padding: 12px; 
+    border-radius: 6px; 
+    font-weight: bold; 
+    cursor: pointer; 
+}
+
+.btn-warning { 
+    background: #f59e0b; 
+    color: white; 
+    border: none; 
+    padding: 12px; 
+    border-radius: 6px; 
+    font-weight: bold; 
+    cursor: pointer; 
+}
+
+.table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-top: 10px; 
+}
+
+.table th, .table td { 
+    padding: 12px; 
+    text-align: left; 
+    border-bottom: 1px solid #f1f5f9; 
+}
+
+.badge-operador {
+    background: #f1f5f9;
+    color: #475569;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.header-caixa {
+    display:flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 20px;
+}
+
+.input-disabled {
+    background:#f8fafc;
+}
+
+.btn-align-bottom {
+    display:flex; 
+    align-items:flex-end;
+}
+
+.card-saldo {
+    color:white; 
+    background: #2563eb;
+}
+
+.label-white {
+    color: rgba(255,255,255,0.8) !important;
+}
+
+.saldo-valor {
+    font-size:32px; 
+    font-weight:800; 
+    display: block;
+}
+
+.status-aberto {
+    color:#10b981;
+}
+
+.data-info {
+    font-size:14px; 
+    margin: 5px 0;
+}

@@ -1,0 +1,31 @@
+.fiscal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.btn-export { background: #059669; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; }
+
+.filters form { display: flex; gap: 10px; }
+.filters input, .filters select { padding: 8px; border: 1px solid #ddd; border-radius: 4px; }
+
+.table-fiscal { width: 100%; border-collapse: collapse; }
+.table-fiscal th { text-align: left; background: #f8fafc; padding: 12px; color: #64748b; font-size: 13px; }
+.table-fiscal td { padding: 12px; border-bottom: 1px solid #f1f5f9; font-size: 14px; }
+
+.status-badge { padding: 4px 8px; border-radius: 12px; font-size: 11px; font-weight: bold; text-transform: uppercase; }
+.status-badge.autorizada { background: #dcfce7; color: #166534; }
+.status-badge.cancelada { background: #fee2e2; color: #991b1b; }
+
+.files-cell a { margin-right: 5px; text-decoration: none; color: #2563eb; font-weight: bold; font-size: 12px; }
+
+.modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; }
+.modal-content { background: white; width: 80%; max-width: 900px; margin: 50px auto; padding: 20px; border-radius: 8px; max-height: 90vh; overflow-y: auto; }
+
+.nf-row { display: flex; gap: 20px; margin-bottom: 20px; }
+.nf-col { flex: 1; border: 1px solid #f1f5f9; padding: 15px; border-radius: 8px; }
+.nf-col h3 { margin-top: 0; font-size: 14px; color: #64748b; text-transform: uppercase; }
+.nf-col p { margin: 5px 0; font-size: 14px; }
+
+.table-itens { width: 100%; border-collapse: collapse; margin: 15px 0; }
+.table-itens th { background: #f8fafc; text-align: left; padding: 10px; font-size: 12px; }
+.table-itens td { padding: 10px; border-bottom: 1px solid #f1f5f9; font-size: 13px; }
+
+.table-resumo { width: 100%; font-size: 14px; }
+.table-resumo td { padding: 4px 0; }
+.total-nf-box { background: #eff6ff; border-color: #bfdbfe; text-align: right; }

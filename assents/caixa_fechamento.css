@@ -1,0 +1,36 @@
+.conteudo { flex: 1; padding: 25px; background: #f8fafc; margin-left: 250px; }
+
+.header-fechamento h2 { margin-bottom: 5px; color: #1e293b; }
+.header-fechamento p { color: #64748b; font-size: 14px; margin-bottom: 25px; }
+
+.pdv-grid { display: flex; gap: 25px; }
+.col-principal, .col-lateral { flex: 1; }
+
+.card-title { color:#2563eb; font-size:13px; margin-bottom:20px; border-bottom: 2px solid #eff6ff; padding-bottom:10px; font-weight: 800; }
+
+.tabela-resumo { width: 100%; border-collapse: collapse; }
+.tabela-resumo td { padding: 15px 0; border-bottom: 1px solid #e2e8f0; color: #475569; font-size: 14px; }
+.val-resumo { text-align: right; font-weight: 700; color: #1e293b; }
+.linha-total { font-size: 18px; color: #2563eb; font-weight: 800; }
+.linha-total td { border-bottom: none; padding-top: 25px; }
+
+.input-group { margin-bottom: 20px; }
+.input-group label { font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; margin-bottom: 8px; display: block; }
+.input-moeda { padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; width: 100%; text-align: right; font-weight: 700; font-size: 18px; color: #1e293b; box-sizing: border-box; }
+
+.total-box { background: #f1f5f9; padding: 20px; border-radius: 10px; border: 2px dashed #cbd5e1; text-align: center; margin-bottom: 15px; }
+.total-box h4 { font-size: 32px; color: #1e293b; margin: 10px 0; }
+
+#status-conferencia { display: none; padding: 15px; border-radius: 8px; text-align: center; font-weight: 800; font-size: 14px; margin-bottom: 20px; }
+.status-batido { background: #dcfce7; color: #166534; }
+.status-sobra { background: #dbeafe; color: #1e40af; }
+.status-falta { background: #fee2e2; color: #991b1b; }
+
+.btn-finalizar { background: #dc2626; color: #fff; border: none; padding: 18px; border-radius: 8px; font-weight: 700; cursor: pointer; width: 100%; font-size: 16px; transition: 0.2s; }
+.btn-finalizar:hover { background: #b91c1c; transform: translateY(-2px); }
+
+.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.8); display: none; align-items: center; justify-content: center; z-index: 1000; backdrop-filter: blur(4px); }
+.modal-content { background: white; padding: 35px; border-radius: 16px; width: 420px; text-align: center; }
+.modal-actions { display: flex; gap: 12px; margin-top: 25px; }
+.btn-voltar { flex: 1; padding: 12px; border-radius: 8px; border: 1px solid #cbd5e1; background: white; font-weight: 600; cursor: pointer; }
+.btn-confirmar { flex: 1; padding: 12px; border-radius: 8px; background: #dc2626; color: white; border: none; font-weight: 700; cursor: pointer; }

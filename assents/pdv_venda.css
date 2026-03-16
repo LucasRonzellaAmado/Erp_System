@@ -1,0 +1,80 @@
+.conteudo-pdv { flex: 1; padding: 25px; background: #f1f5f9; margin-left: 250px; min-height: 100vh; }
+.pdv-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.status-caixa { color: #10b981; font-weight: bold; font-size: 12px; }
+
+.pdv-grid { display: grid; grid-template-columns: 2.2fr 1fr; gap: 20px; }
+.card-erp { background: #fff; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0; margin-bottom: 20px; }
+.label-tiny { font-size: 10px; font-weight: 800; color: #64748b; margin-bottom: 8px; display: block; }
+
+.cliente-input-group, .produto-input-group { display: flex; gap: 10px; margin-bottom: 15px; }
+input, select { padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14px; }
+#busca_id_cliente { width: 80px; }
+#id_cliente { flex: 1; }
+#select_produto { flex: 1; }
+#qtd_item { width: 80px; text-align: center; }
+
+.btn-add-pdv { background: #2563eb; color: #fff; border: none; padding: 0 20px; border-radius: 8px; font-weight: bold; cursor: pointer; }
+
+.scroll-table { max-height: 400px; overflow-y: auto; margin-top: 10px; }
+.table-pdv { width: 100%; border-collapse: collapse; }
+.table-pdv th { text-align: left; padding: 12px; background: #f8fafc; font-size: 11px; color: #64748b; position: sticky; top: 0; }
+.table-pdv td { padding: 12px; border-bottom: 1px solid #f1f5f9; }
+.center { text-align: center; }
+
+.summary-pdv { position: sticky; top: 20px; background: #fff; }
+.resumo-linha { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+.resumo-linha input { width: 120px; text-align: right; }
+
+.total-box-pdv { background: #0f172a; color: #fff; padding: 20px; border-radius: 10px; text-align: center; margin: 20px 0; }
+.total-box-pdv small { display: block; opacity: 0.6; font-size: 10px; letter-spacing: 1px; }
+.total-box-pdv span { font-size: 32px; font-weight: 800; color: #10b981; }
+
+.btn-finalize { width: 100%; padding: 18px; background: #10b981; color: #fff; border: none; border-radius: 10px; font-size: 16px; font-weight: 800; cursor: pointer; transition: 0.2s; }
+.btn-finalize:hover { background: #059669; transform: translateY(-2px); }
+
+.hidden { display: none; }
+.btn-remove-item { color: #ef4444; background: none; border: none; font-size: 18px; cursor: pointer; }
+
+.fiscal-toggle-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background: #f8fafc;
+    border: 1px dashed #cbd5e1;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+.switch-fiscal {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch-fiscal input { opacity: 0; width: 0; height: 0; }
+
+.slider-fiscal {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 20px;
+}
+
+.slider-fiscal:before {
+    position: absolute;
+    content: "";
+    height: 14px; width: 14px;
+    left: 3px; bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider-fiscal { background-color: #2563eb; }
+input:checked + .slider-fiscal:before { transform: translateX(20px); }
+
+.label-fiscal { font-size: 12px; font-weight: bold; color: #475569; }

@@ -1,0 +1,37 @@
+.conteudo { flex:1; padding:25px; background: #f8fafc; margin-left: 250px; min-height: 100vh; }
+
+.header-estoque { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
+.header-estoque h1 { margin: 0; color: #1e293b; font-size: 24px; }
+.header-estoque p { margin: 5px 0 0 0; color: #64748b; font-size: 14px; }
+
+.btn-novo { background: #2563eb; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+.btn-novo:hover { background: #1d4ed8; transform: translateY(-2px); }
+
+.filter-bar { padding: 20px; border-bottom: 1px solid #f1f5f9; }
+.search-form { display: flex; gap: 10px; }
+.search-form input { flex: 1; padding: 10px 15px; border: 1px solid #e2e8f0; border-radius: 8px; outline: none; }
+.search-form button { padding: 10px 20px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 8px; cursor: pointer; font-weight: 600; color: #475569; }
+
+.table-erp { width: 100%; border-collapse: collapse; text-align: left; }
+.table-erp th { padding: 15px; background: #f8fafc; color: #64748b; font-size: 11px; text-transform: uppercase; font-weight: 700; border-bottom: 2px solid #f1f5f9; }
+.table-erp td { padding: 15px; border-bottom: 1px solid #f1f5f9; font-size: 14px; color: #334155; }
+
+.txt-bold { font-weight: 700; }
+.txt-primary { color: #2563eb; }
+.txt-danger { color: #ef4444; }
+
+.badge-categoria { background: #eff6ff; color: #2563eb; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+
+.status-dot { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: 12px; }
+.status-dot::before { content: ''; width: 8px; height: 8px; border-radius: 50%; }
+.status-active { color: #10b981; }
+.status-active::before { background: #10b981; }
+.status-inactive { color: #94a3b8; }
+.status-inactive::before { background: #94a3b8; }
+
+.actions-cell { display: flex; gap: 8px; }
+.btn-edit, .btn-delete { text-decoration: none; padding: 6px; border-radius: 6px; border: 1px solid #e2e8f0; background: white; cursor: pointer; transition: 0.2s; }
+.btn-edit:hover { background: #eff6ff; border-color: #2563eb; }
+.btn-delete:hover { background: #fef2f2; border-color: #ef4444; }
+
+.empty-state { text-align: center; padding: 50px !important; color: #94a3b8; font-style: italic; }

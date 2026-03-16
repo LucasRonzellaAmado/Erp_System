@@ -1,0 +1,33 @@
+.conteudo { flex: 1; padding: 30px; background: #f8fafc; }
+.compra-header { margin-bottom: 20px; }
+
+.pdv-grid { display: grid; grid-template-columns: 2.2fr 1fr; gap: 20px; }
+.card-erp { background: #fff; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0; margin-bottom: 20px; }
+.card-erp h3 { font-size: 15px; margin-bottom: 15px; color: #1e293b; }
+
+#select_fornecedor { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #cbd5e1; font-size: 14px; }
+
+.table-container { overflow-x: auto; }
+.table-erp { width: 100%; border-collapse: collapse; }
+.table-erp th { font-size: 11px; text-transform: uppercase; color: #64748b; padding: 12px; border-bottom: 2px solid #f1f5f9; text-align: left; }
+.table-erp td { padding: 12px; border-bottom: 1px solid #f1f5f9; font-size: 14px; }
+.center { text-align: center; }
+
+.empty-state { text-align: center; padding: 40px !important; color: #94a3b8; }
+.input-qtd { width: 65px; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px; text-align: center; }
+
+.btn-add { background: #10b981; color: white; border: none; padding: 8px 15px; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 12px; }
+.btn-add:hover { background: #059669; }
+
+.summary-card { border-left: 5px solid #2563eb; position: sticky; top: 20px; }
+#carrinho_compra { max-height: 350px; overflow-y: auto; margin-bottom: 15px; }
+.cart-table { width: 100%; font-size: 13px; border-collapse: collapse; }
+.cart-table td { padding: 10px 0; border-bottom: 1px solid #f1f5f9; }
+
+.total-box { margin-top: 15px; padding-top: 15px; border-top: 2px dashed #e2e8f0; text-align: right; }
+.total-box small { font-weight: bold; color: #64748b; text-transform: uppercase; font-size: 10px; }
+.total-box span { display: block; font-size: 28px; font-weight: 800; color: #1e293b; }
+
+.btn-finish { margin-top: 20px; width: 100%; padding: 15px; background: #2563eb; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
+.btn-finish:hover { background: #1d4ed8; }
+.btn-del { border: none; background: none; cursor: pointer; color: #ef4444; font-size: 16px; }

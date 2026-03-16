@@ -1,0 +1,80 @@
+.conteudo { 
+    flex:1; 
+    padding:25px; 
+    background: #f8fafc; 
+    margin-left: 250px; 
+    min-height: 100vh; 
+}
+
+.header-edit {
+    display:flex; 
+    justify-content:space-between; 
+    align-items:center;
+}
+
+.btn-voltar {
+    text-decoration:none; 
+    color:#64748b; 
+    font-size: 14px;
+}
+
+.card-erp {
+    background:#fff; 
+    padding:25px; 
+    border-radius:12px; 
+    border:1px solid #e2e8f0; 
+    margin-top:20px;
+}
+
+.input-erp { 
+    width:100%; 
+    padding:10px; 
+    border:1px solid #e2e8f0; 
+    border-radius:6px; 
+    margin-top:5px; 
+    font-size: 13px;
+    box-sizing: border-box;
+}
+
+.section-title { 
+    margin: 20px 0 10px 0; 
+    color: #2563eb; 
+    font-size: 14px; 
+    text-transform: uppercase; 
+    border-bottom: 2px solid #eff6ff; 
+    padding-bottom: 5px; 
+    grid-column: 1 / -1; 
+    font-weight: 800;
+}
+
+.grid-form { 
+    display:grid; 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap:15px; 
+}
+
+label { 
+    font-size:11px; 
+    font-weight:700; 
+    color:#64748b; 
+}
+
+.form-actions {
+    margin-top:30px; 
+    text-align:right;
+}
+
+.btn-save { 
+    background: #10b981; 
+    color: white; 
+    padding: 15px 30px; 
+    border-radius: 8px; 
+    border: none; 
+    cursor: pointer; 
+    font-weight: bold; 
+    transition: background 0.2s;
+}
+
+.btn-save:hover {
+    background: #059669;
+}

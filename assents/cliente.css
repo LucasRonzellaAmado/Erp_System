@@ -1,0 +1,50 @@
+.card-erp { background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 25px; border: 1px solid #e2e8f0; overflow: hidden; }
+.card-border-primary { border: 2px solid #2563eb; }
+
+.card-header-toggle { cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 15px 25px; background: #2563eb; color: white; transition: 0.3s; }
+.card-header-toggle:hover { background: #1d4ed8; }
+
+.header-title { display: flex; align-items: center; gap: 12px; }
+.title-text { margin: 0; font-size: 18px; color: white; }
+.btn-text-info { font-size: 10px; font-weight: 800; }
+
+.section-form { margin-bottom: 20px; padding: 15px; background: #f8fafc; border-radius: 8px; border: 1px solid #edf2f7; }
+.section-label { color:#2563eb; font-size:13px; margin-bottom:15px; display:block; font-weight: 700; }
+
+.row { display: flex; gap: 15px; margin-bottom: 15px; }
+.col { flex: 1; display: flex; flex-direction: column; }
+.flex-2 { flex: 2; }
+.no-flex { flex: none; }
+.w-70 { width: 70px; }
+
+label { font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; margin-bottom: 5px; }
+input, select { padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; outline: none; }
+
+.input-money { text-align: right; font-weight: bold; color: #2563eb; font-size: 16px; border: 2px solid #2563eb !important; }
+.input-search-big { width:100%; padding:15px; font-size:16px; border: 2px solid #e2e8f0; margin-top:5px; border-radius: 8px; }
+
+.pj-only { display: none; }
+.collapsed { display: none !important; }
+.rotate { transform: rotate(-90deg); transition: 0.3s; }
+
+.search-results { position: absolute; top: 100%; left: 0; right: 0; background: white; border: 1px solid #cbd5e1; border-radius: 0 0 8px 8px; max-height: 250px; overflow-y: auto; z-index: 1000; box-shadow: 0 10px 15px rgba(0,0,0,0.1); display: none; }
+.search-item { padding: 12px 15px; cursor: pointer; border-bottom: 1px solid #f1f5f9; display: flex; justify-content: space-between; }
+.search-item:hover { background: #f0f7ff; color: #2563eb; }
+
+.table { width: 100%; border-collapse: collapse; }
+.table th { background: #f1f5f9; padding: 12px; text-align: left; font-size: 12px; color: #475569; }
+.table td { padding: 12px; border-bottom: 1px solid #f1f5f9; font-size: 14px; }
+.td-empty { text-align:center; padding: 40px; color: #94a3b8; }
+
+.badge-pgto { background: #e2e8f0; padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: bold; color: #475569; }
+.btn-primary { background: #2563eb; color: white; border: none; padding: 15px; border-radius: 6px; font-weight: bold; cursor: pointer; width: 100%; }
+.btn-action { padding: 5px 10px; border-radius: 4px; border: none; cursor: pointer; font-size: 12px; font-weight: bold; transition: 0.2s; margin-right: 5px; }
+.btn-view { background: #6366f1; color: white; }
+.btn-print { background: #10b981; color: white; }
+
+.p-25 { padding: 25px; }
+.p-20 { padding: 20px; }
+.m-0 { margin: 0; }
+.color-slate { color: #1e293b; }
+.txt-red { color: red; text-align: center; }
+.swal-custom-box { text-align: left; padding: 10px; background: #f1f5f9; border-radius: 8px; }
