@@ -38,6 +38,9 @@ $nivel = strtolower($_SESSION['nivel'] ?? '');
             <a class="<?= $paginaAtual == 'historico-venda.php' ? 'ativo' : '' ?>" href="historico-venda.php">
                 📑 <span>Histórico Vendas</span>
             </a>
+            <a class="<?= $paginaAtual == 'entregas.php' ? 'ativo' : '' ?>" href="entregas.php">
+                🛵 <span>Entregas</span>
+            </a>
         <?php endif; ?>
 
         <?php if (in_array($nivel, ['gerente', 'caixa', 'admin'])): ?>

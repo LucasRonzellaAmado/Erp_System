@@ -1,46 +1,79 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) { session_start(); }
-require_once '../include/conexao.php'; 
+require_once '../include/auth.php';
+require_once '../include/conexao.php';
+
 header('Content-Type: application/json');
 
-$data_input = json_decode(file_get_contents('php://input'), true);
+$json = file_get_contents('php://input');
+$dados = json_decode($json, true);
 
-if (!$data_input || empty($data_input['itens'])) { 
-    echo json_encode(['sucesso' => false, 'mensagem' => 'Carrinho vazio.']); exit; 
+if (!$dados || empty($dados['itens'])) {
+    echo json_encode(['sucesso' => false, 'mensagem' => 'Carrinho vazio ou dados inválidos']);
+    exit;
 }
+
+$mysql->begin_transaction();
 
 try {
-    $id_cliente = $data_input['id_cliente'] ?? 1;
-    $forma_pgto = $data_input['forma_pagamento'] ?? 'Dinheiro';
-    $desconto_total = floatval($data_input['desconto'] ?? 0);
-    $gerar_nf = isset($data_input['gerar_nf']) ? intval($data_input['gerar_nf']) : 0;
-    $usuario_id = $_SESSION['usuario_id'] ?? 1; // Pega o ID do vendedor logado
-    $id_caixa = $_SESSION['caixa_id'] ?? 1;     // Pega o ID do caixa aberto
+    $usuario_id = $_SESSION['id'] ?? 0;
+    $id_caixa   = intval($_SESSION['id_caixa_atual'] ?? 1);
 
-    foreach ($data_input['itens'] as $item) {
-            $id_prod = intval($item['id']);
-            $qtd = floatval($item['qtd']);
-            $preco = floatval($item['preco']);
-            $subtotal_item = $qtd * $preco; // Valor real deste item
+    $id_cliente  = intval($dados['id_cliente'] ?? 1);
+    $total       = floatval($dados['total']);
+    $tipo_venda  = $mysql->real_escape_string($dados['tipo_venda'] ?? 'Local');
+    $forma_pagto = $mysql->real_escape_string($dados['forma_pagamento'] ?? 'Dinheiro');
+    file_put_contents('/tmp/debug_venda.txt', "forma_pagto: $forma_pagto\n", FILE_APPEND);
 
-            $mysql->query("UPDATE estoque SET quantidade = quantidade - $qtd WHERE id = $id_prod");
+    // Inserir Venda Principal
+    $sql_venda = "INSERT INTO vendas (id_cliente, usuario_id, id_caixa, valor_total, forma_pagamento, tipo_venda, status_entrega, data_venda) 
+                  VALUES ($id_cliente, $usuario_id, $id_caixa, $total, '$forma_pagto', '$tipo_venda', 'Pendente', NOW())";
 
-            $sql_venda = "INSERT INTO vendas (
-                id_cliente, usuario_id, id_caixa, valor_bruto, valor_desconto, 
-                produto_id, quantidade, valor_unitario, valor_total, 
-                forma_pagamento, data_venda, status_venda, gerar_nf
-            ) VALUES (
-                $id_cliente, $usuario_id, $id_caixa, $subtotal_item, 0, 
-                $id_prod, $qtd, $preco, $subtotal_item, 
-                '$forma_pgto', NOW(), 'Finalizada', $gerar_nf
-            )";
-            
-            $mysql->query($sql_venda);
+    if (!$mysql->query($sql_venda)) {
+        throw new Exception("Erro ao inserir venda: " . $mysql->error);
+    }
+
+    $venda_id = $mysql->insert_id;
+
+    // Se for Entrega, insere os detalhes logísticos
+    if ($tipo_venda === 'Entrega' && isset($dados['entrega'])) {
+        $e      = $dados['entrega'];
+        $rua    = $mysql->real_escape_string($e['rua']);
+        $num    = $mysql->real_escape_string($e['num']);
+        $bairro = $mysql->real_escape_string($e['bairro']);
+        $frete  = floatval($e['frete']);
+
+        $sql_entrega = "INSERT INTO venda_entregas (id_venda, logradouro, numero, bairro, valor_frete) 
+                        VALUES ($venda_id, '$rua', '$num', '$bairro', $frete)";
+
+        if (!$mysql->query($sql_entrega)) {
+            throw new Exception("Erro ao salvar dados de entrega");
         }
+    }
 
-    echo json_encode(['sucesso' => true]);
+    // Inserir Itens e Baixar Estoque
+    foreach ($dados['itens'] as $item) {
+        $id_p     = intval($item['id']);
+        $qtd      = intval($item['qtd']);
+        $pre      = floatval($item['preco']);
+        $tot_item = $qtd * $pre;
+
+        $res = $mysql->query("INSERT INTO venda_itens (id_venda, id_produto, quantidade, preco_unitario, valor_total_item) 
+                              VALUES ($venda_id, $id_p, $qtd, $pre, $tot_item)");
+        if (!$res) throw new Exception("Erro ao inserir item: " . $mysql->error);
+
+        $mysql->query("UPDATE estoque SET quantidade = quantidade - $qtd WHERE id = $id_p");
+    }
+
+    // Registrar entrada no caixa
+    $obs = $mysql->real_escape_string("Venda #$venda_id");
+    $res_caixa = $mysql->query("INSERT INTO movimentacoes_caixa (caixa_id, tipo, origem, forma_pagamento, valor, observacao) 
+                                VALUES ($id_caixa, 'ENTRADA', 'Venda', '$forma_pagto', $total, '$obs')");
+    if (!$res_caixa) throw new Exception("Erro ao registrar no caixa: " . $mysql->error);
+
+    $mysql->commit();
+    echo json_encode(['sucesso' => true, 'venda_id' => $venda_id]);
 
 } catch (Exception $e) {
+    $mysql->rollback();
     echo json_encode(['sucesso' => false, 'mensagem' => $e->getMessage()]);
 }
-?>
